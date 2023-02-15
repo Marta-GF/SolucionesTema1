@@ -181,16 +181,17 @@ car::qqPlot(log(Animals2$brain))
 
 ```{r}
 #a)
-#Para ello, debemos tener en cuentas que las 3 primeras etapas son: Importación, Preparación y transformación.
+#Para determinar las 3 primeras etapas, debemos tener en cuentas que las 3 primeras etapas son: Importación, Preparación y transformación.
 data(cabbages)
 dim(cabbages)
 str(cabbages)
 head(cabbages)
 tail(cabbages)
 summary(cabbages)
-glimpse(cabbages)
 
 #b)
+#Determinamos el número de valores perdidos.
+is.na(cabbages) #No hay ningún valor perdido.
 
 #c)
 
