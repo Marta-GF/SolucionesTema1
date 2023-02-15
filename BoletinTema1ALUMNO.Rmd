@@ -169,8 +169,7 @@ car::qqPlot(log(Animals2$brain))
 
     #c)
     #Determinamos el número de librerías instaladas.
-    numero_librerias <-search()
-    numero_librerias
+    dim(libReturn$results)
     ```
 
 4.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
@@ -181,6 +180,22 @@ car::qqPlot(log(Animals2$brain))
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+#a)
+#Para ello, debemos tener en cuentas que las 3 primeras etapas son: Importación, Preparación y transformación.
+data(cabbages)
+dim(cabbages)
+str(cabbages)
+head(cabbages)
+tail(cabbages)
+summary(cabbages)
+glimpse(cabbages)
+
+#b)
+
+#c)
+
+#d)
+
 ```
 
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
