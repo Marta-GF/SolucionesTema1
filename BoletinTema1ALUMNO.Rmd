@@ -149,7 +149,7 @@ car::qqPlot(log(mammals$brain))
 #Con Animals2
 car::qqPlot(log(Animals2$brain))
 
-#Ambas presentan un comportamiento muy similar. Sin embargo, no podemos afirmar que sigan una distribución gaussiana puesto que no son simétricas.
+#Ambas presentan un comportamiento muy similar. Sí siguen una distribución gaussiana puesto que son aproximadamente simétricas a la recta.
 ```
 
 3.  La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
@@ -212,6 +212,15 @@ summary(Chile)
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
 
 ```{r}
+#Utilizamos la aproximación visual proporcionada por la función qqPlot.
+
+#En HeadWt:
+qqPlot(cabbages$HeadWt)
+
+#En VitC:
+qqPlot(cabbages$VitC)
+
+#Ambas variables del conjunto verifican la condición de seguir una distribución gaussiana, puesto que se aproximan a la recta.
 ```
 
 6.  Una representación habitual, para determinar la distribución de los datos de una variable cuantitativa es el histograma (**hist**). Determina, de forma aproximada, utilizando el histograma, si hay diferencias entre los contenidos de vitamina C (**VitC**), para las diferentes variedades de calabaza (variable **Cult**), en el conjunto de datos **cabbages**.
