@@ -282,5 +282,11 @@ abline(modelo_lineal_2, lty = 5, col = "green")
 c\. Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo \$y=mx+n\$, donde \$y=VitC\$ y \$x=HeadWt\$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
 
 ```{r}
+#Aplicamos summary y observamos Coefficients
 
+summary(modelo_lineal) #Los coeficientes son: -7.567, 1.131, -6.689, 9.75e-09
+
+summary(modelo_lineal_1)#Los coeficientes son: -0.05776, 0.01835, -3.148, 0.00388
+
+summary(modelo_lineal_2)#Los coeficientes son: -0.06818, 0.01415, -4.817, 4.57e-05
 ```
