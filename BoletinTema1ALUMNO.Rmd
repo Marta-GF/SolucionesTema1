@@ -268,10 +268,18 @@ abline(modelo_lineal)
 b\. Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 ```{r}
+#Repetimos el mismo proceso que en apartado anterior.
+plot(cabbages$VitC, cabbages$HeadWt, pch=c(20,10)[cabbages$Cult], ylab = "Peso de la calabaza", xlab = "Vitamina C")
+legend(x="topright",legend=c("Cult 1","Cult 2"), pch=c(20,10))
 
+modelo_lineal_1 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c39"))
+modelo_lineal_2 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c52"))
+
+abline(modelo_lineal_1, col = "dark green")
+abline(modelo_lineal_2, lty = 5, col = "green")
 ```
 
-c\. Usa \*\*summary\*\* con cada uno de los modelos obtenidos y observa \*\*Coefficients\*\*. Dado que hemos planteado un modelo \$y=mx+n\$, donde \$y=VitC\$ y \$x=HeadWt\$. La función \*\*lm\*\* nos permite obtener \*\*(Intercept)\*\*; \*\*n\*\* y la pendiente \*\*HeadWt\*\*; \*\*m\*\* (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
+c\. Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo \$y=mx+n\$, donde \$y=VitC\$ y \$x=HeadWt\$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
 
 ```{r}
 
