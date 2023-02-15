@@ -1,7 +1,7 @@
 ---
 título: "Boletín Tema 1"
 subtítulo: Tratamiento de Datos. Grado en Ciencia de Datos- UV
-autor: "Marcelino Martínez"
+autor: "Marta García Frechina"
 date: "'r Sys.Date()'" #Pondría la fecha del día actual
 Parámetros:
   lang: ES
@@ -35,44 +35,30 @@ Idioma:
     prueba: 'Demostración. '
     Observación: «Nota: »
     solución: 'Solución. '
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-'''{r setup, cache = F, echo = F, message = F, warning = F, tidy = F,}
-# CONFIGURACIÓN GENERAL
-Biblioteca (Knitr)
-opciones(ancho = 100)
-# Opciones generales chunks
-## PARA GENERAR SOLO LOS ENUNCIADO include=FALSE
-#opts_chunk$set(echo=F,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=FALSE)
-## PARA Incluir la soluciones SOLO LOS ENUNCIADO include=TRUE
-opts_chunk$set(echo=T,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy       = F, cache.path  = '.cache/', fig.path = './figure/', include=TRUE)
-#options(xtable.type = 'html')
-knit_hooks$set(inline = function(x) {
-  
-  if(is.numeric(x)) {
- round(x, getOption('digits'))
-  } más {
- paste(as.character(x), collapse = ', ')
-  }
-})
-#knit_hooks$set(plot = knitr:::hook_plot_html)
-```
+'''{r setup, cache = F, echo = F, message = F, warning = F, tidy = F,} \# CONFIGURACIÓN GENERAL Biblioteca (Knitr) opciones(ancho = 100) \# Opciones generales chunks \## PARA GENERAR SOLO LOS ENUNCIADO include=FALSE #opts_chunk$set(echo=F,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=FALSE) ## PARA Incluir la soluciones SOLO LOS ENUNCIADO include=TRUE opts_chunk$set(echo=T,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=TRUE) #options(xtable.type = 'html') knit_hooks\$set(inline = function(x) {
 
-'''{r,echo=FALSE}
-# Especificamos las librerías necesarias en esta lista
-packages = c("MASS","knitr","tidyverse","robustbase","car")
-#Utilice esta función para comprobar si cada paquete está en el equipo local
-#if a package is installed, it will be loaded
-#if any are not, the missing package(s) will be installed and loaded
-package.check <- lapply(packages, FUN = function(x) {
-  if (!require(x, character.only = TRUE)) {
-    install.packages(x, dependencies = TRUE)
-    library(x, character.only = TRUE)
-  }
-})
-#verify they are loaded
-#search()
-```
+if(is.numeric(x)) { round(x, getOption('digits')) } más { paste(as.character(x), collapse = ',') } }) #knit_hooks\$set(plot = knitr:::hook_plot_html)
+
+
+    '''{r,echo=FALSE}
+    # Especificamos las librerías necesarias en esta lista
+    packages = c("MASS","knitr","tidyverse","robustbase","car")
+    #Utilice esta función para comprobar si cada paquete está en el equipo local
+    #if a package is installed, it will be loaded
+    #if any are not, the missing package(s) will be installed and loaded
+    package.check <- lapply(packages, FUN = function(x) {
+      if (!require(x, character.only = TRUE)) {
+        install.packages(x, dependencies = TRUE)
+        library(x, character.only = TRUE)
+      }
+    })
+    #verify they are loaded
+    #search()
 
 1.  Considera los conjuntos de datos **mammals** del paquete **MASS** y **Animals2** del paquete **robustbase**.
 
@@ -153,13 +139,11 @@ abline(Model2)
 ```{r,echo=T,include=T,eval=F}
 ```
 
-un. Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
-b. Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
+un. Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**. b. Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 '''{r}
-```
 
-c. Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
 
-'''{r}
-```
+    c. Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
+
+    '''{r}
