@@ -194,6 +194,14 @@ summary(cabbages)
 is.na(cabbages) #No hay ningún valor perdido.
 
 #c)
+#Repetimos con Chile.
+data(Chile)
+dim(Chile)
+str(Chile)
+head(Chile)
+tail(Chile)
+summary(Chile)
+is.na(Chile)
 
 #d)
 
