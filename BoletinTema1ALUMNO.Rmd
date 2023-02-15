@@ -78,7 +78,7 @@ library(robustbase)
 M <- MASS::mammals
 A <- robustbase::Animals2
 
-#Miramos con la ayuda
+#Miramos con la ayuda.
 help(package = MASS, topic = mammals)
 help(package = robustbase, topic = Animals2)
 
@@ -96,6 +96,12 @@ head(A)
 tail(A)
 str(A)
 
+#c)
+#Mostramos los nombres de las filas y columnas en ambos conjuntos.
+rownames(M)
+colnames(M)
+rownames(A)
+colnames(A)
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
